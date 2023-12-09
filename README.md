@@ -1,4 +1,5 @@
 # Motion Primitives Planning Package
+A ROS package for simulation. Given a graph and traversal order, and a set of motion primitives, compute the optimal trajectory satisfying the kinematic constraints and visualized in gazebo and rviz.
 
 ## Requirements
 
@@ -10,15 +11,15 @@
 1. Create a new workspace:
 
 ```shell
-$ mkdir -p ~/motion_primitive_planning/src
-$ cd ~/motion_primitive_planning/src
-$ catkin_init_workspace
+mkdir -p ~/motion_primitive_planning/src
+cd ~/motion_primitive_planning/src
+catkin_init_workspace
 ```
 
 2. Clone the package into the workspace:
 
 ```shell
-$ git clone https://github.com/HyPAIR/motion_primitive_planning.git
+git clone https://github.com/HyPAIR/motion_primitive_planning.git
 ```
 
 3. Install dependencies:
@@ -29,18 +30,18 @@ rosdep install motion_primitive_planning
 3. Build the workspace:
 
 ```shell
-$ cd ~/motion_primitive_planning
-$ catkin_make
+cd ~/motion_primitive_planning
+catkin_make
 ```
 
 ## Usage
 
-1. Save the data.json file to ~/motion_primitive_planning/src/motion_primitive_planning/data/
+1. Save the ```data.json``` file to ```~/motion_primitive_planning/src/motion_primitive_planning/data/```.
 
 2. Launch the node to compute the optimal trajectory:
 
     ```shell
-    $ roslaunch motion_primitive_planning compute_optimal_traj.launch
+    roslaunch motion_primitive_planning compute_optimal_traj.launch
     ```
 3. Launch the node to visulize the trajectory in simulation:
 
@@ -56,13 +57,13 @@ $ catkin_make
    roslaunch mir_examples single_mir_100.launch 
     ```
     
-Launch the node to visualize the map
+5. Launch the node to visualize the map
 
     ```shell
    roslaunch motion_primitive_planning visualize_real.launch 
     ```
     
-Launch the node to let the robot track the given trajectory
+6. Launch the node to let the robot track the given trajectory
 
     ```shell
    roslaunch motion_primitive_planning sarah_traj_tracking.launch 
